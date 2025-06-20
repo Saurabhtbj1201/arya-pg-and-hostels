@@ -15,6 +15,21 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+
+// Select the progress bar fill element
+const progressBar = document.querySelector('.filled');
+
+window.addEventListener('scroll', () => {
+    // Calculate the scroll progress
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+    // Update the width of the progress bar
+    progressBar.style.width = scrollPercentage + '%';
+});
+
+
 // Hero Slider
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
@@ -79,151 +94,114 @@ function selectRoom(roomType) {
     }
 }
 
-// Email sending function using mailto
-function sendEmailViaMailto(subject, body) {
-    const mailtoLink = `mailto:Saurabhtbj143@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-}
-
-// Alternative: Create a hidden form and submit to a server-side script
-function submitFormData(formData, formType) {
-    // This would typically submit to a server-side script
-    // For demonstration, we'll use console.log and show success message
-    console.log(`${formType} Form Data:`, formData);
-    
-    // You can replace this with actual form submission to your server
-    // Example: fetch('/submit-form.php', { method: 'POST', body: formData })
-    
-    showModal(`${formType} submitted successfully! We will contact you soon.`);
-    return true;
-}
-
-// Form Handling
-const bookingForm = document.getElementById('bookingForm');
-const contactForm = document.getElementById('contactForm');
-const modal = document.getElementById('confirmationModal');
-
-if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(bookingForm);
-        
-        // Create email content
-        const subject = 'New Booking Request - Arya Boys PG';
-        const body = `
-New booking request received:
-
-Name: ${formData.get('name')}
-Email: ${formData.get('email')}
-Phone: ${formData.get('phone')}
-Check-in Date: ${formData.get('checkin')}
-Room Type: ${formData.get('roomtype')}
-Special Request: ${formData.get('request') || 'None'}
-
-Please contact the customer for confirmation.
-
---
-Arya Boys PG Website
-        `;
-        
-        // Option 1: Open default email client
-        sendEmailViaMailto(subject, body);
-        
-        // Option 2: Submit to server (uncomment if you have server-side handling)
-        // submitFormData(formData, 'Booking');
-        
-        // Show success message and reset form
-        setTimeout(() => {
-            showModal('Booking request submitted! Your default email client should open. If not, please contact us directly.');
-            bookingForm.reset();
-        }, 500);
-    });
-}
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        
-        // Create email content
-        const subject = 'New Contact Message - Arya Boys PG';
-        const body = `
-New contact message received:
-
-Name: ${formData.get('name')}
-Email: ${formData.get('email')}
-Message: ${formData.get('message')}
-
---
-Arya Boys PG Website
-        `;
-        
-        // Option 1: Open default email client
-        sendEmailViaMailto(subject, body);
-        
-        // Option 2: Submit to server (uncomment if you have server-side handling)
-        // submitFormData(formData, 'Contact');
-        
-        // Show success message and reset form
-        setTimeout(() => {
-            showModal('Message submitted! Your default email client should open. If not, please contact us directly.');
-            contactForm.reset();
-        }, 500);
-    });
-}
-
-// Alternative method: Create WhatsApp link for easier contact
-function sendWhatsAppMessage(message) {
-    const phoneNumber = '919876543210'; // Replace with actual WhatsApp number
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-}
-
-// Add WhatsApp button functionality (if you want to add this option)
-function handleWhatsAppBooking() {
-    const formData = new FormData(bookingForm);
-    const message = `
-Hi! I want to book a room at Arya Boys PG.
-
-Details:
-Name: ${formData.get('name')}
-Email: ${formData.get('email')}
-Phone: ${formData.get('phone')}
-Check-in Date: ${formData.get('checkin')}
-Room Type: ${formData.get('roomtype')}
-Special Request: ${formData.get('request') || 'None'}
-    `;
-    
-    sendWhatsAppMessage(message);
-}
-
-// Modal Functions
-function showModal(customMessage = null) {
-    const modalContent = modal.querySelector('.modal-content p');
-    if (customMessage) {
-        modalContent.textContent = customMessage;
+// Email sending function - moved inside DOMContentLoaded to ensure EmailJS is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize EmailJS after DOM is loaded
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init('DRXOHWryOTpy9TUps');
+        console.log('EmailJS initialized successfully');
+    } else {
+        console.error('EmailJS not loaded');
     }
-    modal.style.display = 'block';
-}
 
-function closeModal() {
-    modal.style.display = 'none';
-}
+    // Booking form submission
+    const bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            console.log('Form submission started');
 
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeModal();
+            const form = this;
+            const submitBtn = form.querySelector('.submit-btn');
+            const modal = document.getElementById('booking-success-modal');
+            const overlay = document.getElementById('booking-overlay');
+
+            // Validate EmailJS is available
+            if (typeof emailjs === 'undefined') {
+                console.error('EmailJS not available');
+                alert('❌ Email service not available. Please try again later.');
+                return;
+            }
+
+            // Check if all required elements exist
+            if (!submitBtn || !modal || !overlay) {
+                console.error('Required elements not found:', { submitBtn, modal, overlay });
+                alert('❌ Form elements not found. Please refresh the page.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            console.log('Sending form with EmailJS...');
+
+            emailjs.sendForm('service_kl8aq6v', 'template_0w1hphg', form)
+                .then((response) => {
+                    console.log('✅ Email sent successfully:', response);
+                    form.reset();
+                    // Show success modal
+                    modal.style.display = 'block';
+                    overlay.style.display = 'block';
+
+                    // Auto-close modal after 2 seconds
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                        overlay.style.display = 'none';
+                    }, 2000);
+                })
+                .catch((error) => {
+                    console.error('❌ Failed to send booking request:', error);
+                    alert('❌ Failed to send booking request. Please try again later.');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Booking Request';
+                });
+        });
+    } else {
+        console.error('Booking form not found');
     }
+
+    // Smooth scrolling function
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+
+    // Loading animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections for loading animations
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.classList.add('loading');
+            observer.observe(section);
+        });
+        
+        // Set minimum date for check-in
+        const checkinInput = document.getElementById('checkin');
+        if (checkinInput) {
+            const today = new Date().toISOString().split('T')[0];
+            checkinInput.setAttribute('min', today);
+        }
+    });
 });
-
-// Close modal with X button
-const closeBtn = document.querySelector('.close');
-if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-}
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
@@ -232,35 +210,5 @@ window.addEventListener('scroll', () => {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
     } else {
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    }
-});
-
-// Loading animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('loaded');
-        }
-    });
-}, observerOptions);
-
-// Observe all sections for loading animations
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.classList.add('loading');
-        observer.observe(section);
-    });
-    
-    // Set minimum date for check-in
-    const checkinInput = document.getElementById('checkin');
-    if (checkinInput) {
-        const today = new Date().toISOString().split('T')[0];
-        checkinInput.setAttribute('min', today);
     }
 });
