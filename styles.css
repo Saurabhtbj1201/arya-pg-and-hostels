@@ -135,21 +135,21 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 2.5px; /* Slightly thicker */
-  background: #989bff; /* Light background */
+  height: 3px; /* Slightly thicker */
+  background: #bfb4ff; /* Light background */
   z-index: 2000; /* Increased z-index to stay on top */
 }
 
 .filled {
   height: 100%;
   width: 0%; /* Starts empty */
-  background: #d70fff; /* Orange color */
+  background: #d91dff; /* Orange color */
   transition: width 0.1s linear;
 }
 
 @media (max-width: 740px) {
   .progress-bar {
-    height: 2px; /* Reduced height */
+    height: 2.5px; /* Reduced height */
   }
 }
 
