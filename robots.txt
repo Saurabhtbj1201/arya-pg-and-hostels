@@ -1,0 +1,61 @@
+# Robots.txt for Arya Boys PG Website
+# https://arya-pg.vercel.app/
+
+# Allow all web crawlers to access the site
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin/private areas (if any exist in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Allow important pages for SEO
+Allow: /index.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /images/
+
+# Allow access to CSS and JS files for better rendering
+Allow: /*.css
+Allow: /*.js
+
+# Allow access to image files
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.avif
+Allow: /*.svg
+
+# Sitemap location (you can create this later)
+Sitemap: https://arya-pg.vercel.app/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block common spam/unwanted bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
