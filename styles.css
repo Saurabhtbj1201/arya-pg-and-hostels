@@ -50,6 +50,24 @@ body {
     margin: 0 auto;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo .logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.nav-logo .logo:hover {
+    transform: scale(1.1);
+}
+
 .nav-logo h2 {
     color: var(--primary-color);
     font-weight: 700;
@@ -1145,10 +1163,17 @@ body {
     .nav-menu .booking-btn {
         margin: 1rem;
         display: inline-block;
+    }    .nav-menu {
+        gap: 0.65rem;
     }
 
-    .nav-menu {
-        gap: 0.65rem;
+    .nav-logo .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-logo h2 {
+        font-size: 1.4rem;
     }
 
     .cta-btn {
