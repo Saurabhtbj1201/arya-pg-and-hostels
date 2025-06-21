@@ -204,6 +204,7 @@ small {
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   z-index: 1;
+  color: #f8f9fa;
 }
 
 .intro {
@@ -212,6 +213,7 @@ small {
   max-width: 800px;
   margin: 0 auto;
   opacity: 0.95;
+  color:#ffffff;
   position: relative;
   z-index: 1;
 }
@@ -235,7 +237,7 @@ small {
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: var(--primary-color);
+  color: #0d81ce;
   border-bottom: 3px solid var(--secondary-color);
   padding-bottom: 1rem;
   margin-bottom: 2rem;
@@ -291,7 +293,7 @@ small {
 }
 
 .detailed-list li strong {
-  color: var(--primary-color);
+  color: #1d97e8;
   font-weight: 600;
   display: inline-block;
   margin-bottom: 0.25rem;
@@ -391,7 +393,7 @@ small {
 }
 
 .contact-item h4 {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -444,7 +446,6 @@ small {
 
 .btn-primary {
   background: var(--secondary-color);
-  color: white;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
@@ -511,13 +512,13 @@ small {
 
 .consent-buttons .btn {
   background: var(--bg-light);
-  color: var(--primary-color);
   min-width: 200px;
 }
 
 .consent-buttons .btn:hover {
   background: var(--bg-light);
   transform: translateY(-3px);
+  color: var(--text-color);
 }
 
 /* Footer */
