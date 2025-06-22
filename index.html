@@ -12,7 +12,8 @@
 
     <!-- Open Graph Meta Tags (For Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:title" content="Arya Boys PG | Dankaur, Greater Noida, UP" />
-    <meta property="og:description" content="PG in Dankaur, Greater Noida. Affordable & safe PG near Galgotias University & NIU. Contact us for bookings." />
+    <meta property="og:description"
+        content="PG in Dankaur, Greater Noida. Affordable & safe PG near Galgotias University & NIU. Contact us for bookings." />
     <meta property="og:image" content="https://arya-pg.vercel.app/images/title.png" />
     <meta property="og:url" content="https://www.aryapg.com/" />
     <meta property="og:type" content="website" />
@@ -22,7 +23,8 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Arya Boys PG | Noida" />
-    <meta name="twitter:description" content="PG in Dankaur, Greater Noida. Comfortable and affordable accommodation for students and professionals. Modern amenities, hygienic food, and 24/7 security. Book your stay now!" />
+    <meta name="twitter:description"
+        content="PG in Dankaur, Greater Noida. Comfortable and affordable accommodation for students and professionals. Modern amenities, hygienic food, and 24/7 security. Book your stay now!" />
     <meta name="twitter:image" content="https://arya-pg.vercel.app/images/title.png" />
 
     <!--favicon-->
@@ -394,6 +396,31 @@
                     z-index: 1000;"></div>
             </div>
 
+            <!-- Success/Error Modal -->
+            <div id="booking-success-modal" style=" display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 25px 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1001;
+    font-family: system-ui, sans-serif;">
+                <p id="modal-message" style="font-size: 16px; color: #2e7d32;">✅ Booking request sent successfully!</p>
+            </div>
+
+            <!-- Overlay -->
+            <div id="booking-overlay" style="
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;"></div>
+
+
             <div class="container">
                 <div class="directions">
                     <h3>How to Reach Us</h3>
@@ -518,8 +545,9 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Address</h4>
-                            <p>Near Galgotias University, Dankaur, Greater Noida, Gautam Buddha Nagar, Uttar Pradesh, 203201
-                                </p>
+                            <p>Near Galgotias University, Dankaur, Greater Noida, Gautam Buddha Nagar, Uttar Pradesh,
+                                203201
+                            </p>
                             <a href="https://maps.app.goo.gl/47paqL1cqQoELn2j7" target="_blank" class="contact-btn">View
                                 on Map</a>
                         </div>
@@ -558,10 +586,14 @@
                         <div class="form-group">
                             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
+                        <!-- Hidden Inputs -->
+                        <input type="hidden" name="timestamp" id="timestamp">
+                        <input type="hidden" name="ip" id="ip">
+                        <input type="hidden" name="device" id="device">
+
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
-
     </section>
 
     <!-- Footer -->
@@ -590,10 +622,13 @@
                     <p><i class="fas fa-map-marker-alt"></i> Near Galgotias University, Dankaur, Gautam Buddha Nagar,
                         Uttar Pradesh, 203201</p>
                 </div>
-            </div>            <div class="footer-bottom">
+            </div>
+            <div class="footer-bottom">
                 <p>&copy; 2025 Arya Boys PG. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a
                         href="terms.html">Terms & Conditions</a></p>
-                <p style="font-size: 0.8rem; margin-top: 0.5rem;">Designed and Developed by: <a href="https://www.gu-saurabh.tech" target="_blank" style="color: var(--secondary-color); text-decoration: none;">Saurabh Kumar</a></p>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem;">Designed and Developed by: <a
+                        href="https://www.gu-saurabh.tech" target="_blank"
+                        style="color: var(--secondary-color); text-decoration: none;">Saurabh Kumar</a></p>
             </div>
         </div>
     </footer>

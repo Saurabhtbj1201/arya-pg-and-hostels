@@ -51,7 +51,7 @@ setInterval(nextSlide, 3000);
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
-        element.scrollIntoView({ 
+        element.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
@@ -68,9 +68,9 @@ filterBtns.forEach(btn => {
         filterBtns.forEach(button => button.classList.remove('active'));
         // Add active class to clicked button
         btn.classList.add('active');
-        
+
         const filter = btn.getAttribute('data-filter');
-        
+
         galleryItems.forEach(item => {
             if (filter === 'all' || item.getAttribute('data-category') === filter) {
                 item.style.display = 'block';
@@ -98,7 +98,7 @@ function selectRoom(roomType) {
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize EmailJS after DOM is loaded
     if (typeof emailjs !== 'undefined') {
-        emailjs.init('DRXOHWryOTpy9TUps');
+        emailjs.init('NINLsGFU3T_M2zjP7'); // Your public key
         console.log('EmailJS initialized successfully');
     } else {
         console.error('EmailJS not loaded');
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = 'Sending...';
             console.log('Sending form with EmailJS...');
 
-            emailjs.sendForm('service_kl8aq6v', 'template_0w1hphg', form)
+            emailjs.sendForm('service_aryapg', 'template_booking', form) // Replace with your service ID and template ID
                 .then((response) => {
                     console.log('✅ Email sent successfully:', response);
                     form.reset();
@@ -161,11 +161,87 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Booking form not found');
     }
 
+    emailjs.init('NINLsGFU3T_M2zjP7'); // Your public key
+
+    async function fetchIP() {
+        try {
+            const res = await fetch('https://api.ipify.org?format=json');
+            const data = await res.json();
+            return data.ip;
+        } catch (err) {
+            return 'Unavailable';
+        }
+    }
+
+    function getDeviceInfo() {
+        return navigator.userAgent || 'Unknown';
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const form = this;
+        const submitBtn = form.querySelector('.submit-btn');
+
+        document.getElementById('timestamp').value = new Date().toLocaleString();
+        document.getElementById('device').value = getDeviceInfo();
+        document.getElementById('ip').value = await fetchIP();
+
+        const modal = document.getElementById('booking-success-modal');
+        const overlay = document.getElementById('booking-overlay');
+        const message = document.getElementById('modal-message');
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        emailjs.sendForm('service_aryapg', 'template_contact', form)
+            .then((response) => {
+                console.log('✅ Email sent successfully:', response);
+                form.reset();
+
+                // Set success message and color
+                message.textContent = '✅ Booking request sent successfully!';
+                message.style.color = '#2e7d32';
+
+                modal.style.display = 'block';
+                overlay.style.display = 'block';
+
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    overlay.style.display = 'none';
+                }, 2500);
+            })
+            .catch((error) => {
+                console.error('❌ Email send error:', error);
+
+                // Set error message and color
+                message.textContent = '❌ Failed to send message. Please try again later.';
+                message.style.color = '#c62828';
+
+                modal.style.display = 'block';
+                overlay.style.display = 'block';
+
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    overlay.style.display = 'none';
+
+                    // Optional: Reset to default message for next use
+                    message.textContent = '✅ Booking request sent successfully!';
+                    message.style.color = '#2e7d32';
+                }, 2000);
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            });
+    });
+
+
     // Smooth scrolling function
     function scrollToSection(sectionId) {
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ 
+            element.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -193,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             section.classList.add('loading');
             observer.observe(section);
         });
-        
+
         // Set minimum date for check-in
         const checkinInput = document.getElementById('checkin');
         if (checkinInput) {
