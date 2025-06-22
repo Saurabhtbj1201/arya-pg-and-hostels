@@ -5,11 +5,6 @@
 User-agent: *
 Allow: /
 
-# Disallow crawling of admin/private areas (if any exist in future)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-
 # Allow important pages for SEO
 Allow: /index.html
 Allow: /privacy.html
