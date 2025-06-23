@@ -5,11 +5,11 @@
 User-agent: *
 Allow: /
 
-# Allow important pages for SEO
-Allow: /index.html
-Allow: /privacy.html
-Allow: /terms.html
-Allow: /styles.css
+# Sitemap location
+Sitemap: https://aryapg.com/sitemap.xml
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
 Allow: /script.js
 Allow: /images/
 
