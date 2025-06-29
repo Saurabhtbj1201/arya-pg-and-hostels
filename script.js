@@ -111,10 +111,27 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             console.log('Form submission started');
 
+            const termsChecked = document.getElementById('terms').checked;
+            const privacyChecked = document.getElementById('privacy').checked;
+            const errorDiv = document.getElementById('formError');
             const form = this;
             const submitBtn = form.querySelector('.submit-btn');
             const modal = document.getElementById('booking-success-modal');
             const overlay = document.getElementById('booking-overlay');
+
+            // Clear previous error message
+            errorDiv.textContent = '';
+
+            // Validate checkboxes
+            if (!privacyChecked) {
+                errorDiv.textContent = 'Please read and agree to the Privacy Policy.';
+                return;
+            }
+
+            if (!termsChecked) {
+                errorDiv.textContent = 'Please accept the Terms and Conditions.';
+                return;
+            }
 
             // Validate EmailJS is available
             if (typeof emailjs === 'undefined') {
@@ -161,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Booking form not found');
     }
 
+    //contact form submission
     emailjs.init('NINLsGFU3T_M2zjP7'); // Your public key
 
     async function fetchIP() {
