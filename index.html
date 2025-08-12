@@ -7,13 +7,13 @@
     <meta name="keywords"
         content="PG near Galgotias University, Arya Boys PG, PG in Dankaur, boys hostel Greater Noida, PG near NIU, hostel in Dankaur, best PG Galgotias, budget PG Greater Noida, affordable boys hostel, furnished PG rooms, Best PG near GL Bajaj, Best hostel near Noida International University, PG accommodation in Knowledge Park, affordable accommodation in Delhi NCR, student housing in Greater Noida, Boys PG near Pari Chauk, hostel near Jewar" />
     <meta name="description"
-        content="Arya Boys PG offers the best accommodation near Galgotias University, NIU & GL Bajaj. Affordable PG in Dankaur, Greater Noida with furnished rooms, hygienic food, WiFi, and 24/7 security. Book your stay now!" />
+        content="Best PG & Hostel near Galgotias University with affordable rooms, meals & WiFi. Safe accommodation in Dankaur, Greater Noida for students & professionals." />
     <meta name="author" content="Saurabh Kumar">
-    <meta name="theme-color" content="#519bc9">
+    <meta name="theme-color" content="#9971b2">
     <meta name="publish_date" content="2025-06-20" />
 
     <!-- Open Graph Meta Tags (For Facebook, LinkedIn, WhatsApp) -->
-    <meta property="og:title" content="Arya Boys PG | Best PG Near Galgotias University, Greater Noida" />
+    <meta property="og:title" content="Best PG & Hostel near Galgotias University | Arya Boys PG" />
     <meta property="og:description"
         content="Looking for PG near Galgotias University or NIU? Arya Boys PG offers affordable, safe accommodation with furnished rooms, meals & WiFi in Dankaur, Greater Noida." />
     <meta property="og:image" content="https://aryapg.com/images/title.png" />
@@ -27,7 +27,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://aryapg.com/">
-    <meta name="twitter:title" content="Arya Boys PG | Best Hostel Near Galgotias University" />
+    <meta name="twitter:title" content="Best PG & Hostel near Galgotias University | Arya Boys PG" />
     <meta name="twitter:description"
         content="PG in Dankaur, PG near Galgotias University, NIU, GL Bajaj. Comfortable and affordable accommodation for students. Modern amenities, hygienic food, and 24/7 security." />
     <meta name="twitter:image" content="https://aryapg.com/images/title.png" />
@@ -43,17 +43,30 @@
 
     <!--favicon-->
     <link rel="icon" href="./images/logo2.png" type="image/png">
-    <title>Arya Boys PG/Hostel | Best PG Near Galgotias University, Greater Noida</title>
+    <title>Best PG & Hostel near Galgotias University | Arya Boys PG</title>
 
     <!-- Language and Alternate Links -->
     <link rel="alternate" hreflang="hi" href="https://aryapg.com/" />
     <link rel="alternate" hreflang="x-default" href="https://aryapg.com/" />
 
-    <!-- CSS Stylesheets -->
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="styles.css" as="style">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Load critical fonts first -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Defer non-critical CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>
+    
+    <!-- Remaining fonts loaded asynchronously -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     <!-- Local Business Schema Markup -->
     <script type="application/ld+json">
@@ -773,9 +786,21 @@
         </div>
     </div>
 
-    <!-- Load EmailJS SDK BEFORE your custom script -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Load EmailJS SDK with defer attribute -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Fixed Contact Buttons -->
+    <div class="fixed-contact-buttons">
+        <a href="tel:+918006908513" class="fixed-btn call-btn" aria-label="Call us">
+            <i class="fas fa-phone-alt"></i>
+            <span class="btn-text">Call Now</span>
+        </a>
+        <a href="https://wa.me/918006908513" target="_blank" class="fixed-btn whatsapp-btn" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="btn-text">WhatsApp</span>
+        </a>
+    </div>
 </body>
 
 </html>
