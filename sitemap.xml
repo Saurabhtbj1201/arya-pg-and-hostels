@@ -1,133 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Main Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aryapg.com/</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2023-07-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Main HTML Page -->
-  <url>
-    <loc>https://aryapg.com/index.html</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Privacy Policy Page -->
   <url>
     <loc>https://aryapg.com/privacy.html</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2023-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
-
-  <!-- Terms and Conditions Page -->
   <url>
     <loc>https://aryapg.com/terms.html</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Important Images for Image SEO -->
-  <url>
-    <loc>https://aryapg.com/images/title.png</loc>
-    <lastmod>2025-01-28</lastmod>
+    <lastmod>2023-07-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
-  <url>
-    <loc>https://aryapg.com/images/favicon.png</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/images/home1.jpg</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/images/home2.jpg</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/images/home3.jpg</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/images/room1.webp</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/images/room2.avif</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/images/outside.webp</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/images/Admin.jpg</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <!-- CSS and JS files (for better crawling) -->
-  <url>
-    <loc>https://aryapg.com/styles.css</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/style2.css</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://aryapg.com/script.js</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- Robots.txt for completeness -->
-  <url>
-    <loc>https://aryapg.com/robots.txt</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
 </urlset>

@@ -306,3 +306,41 @@ window.addEventListener('scroll', () => {
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
     }
 });
+
+// Active menu link on scroll
+function highlightNavOnScroll() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Get current scroll position
+    const scrollPosition = window.scrollY;
+    
+    // Loop through sections to find the one in view
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100; // Offset for better UX
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            // Remove active class from all links
+            navLinks.forEach(link => {
+                link.classList.remove('active-link');
+            });
+            
+            // Add active class to corresponding nav link
+            const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            if (correspondingLink) {
+                correspondingLink.classList.add('active-link');
+            }
+        }
+    });
+}
+
+// Add scroll event listener for highlighting active nav link
+window.addEventListener('scroll', highlightNavOnScroll);
+
+// Initialize active link on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize active link
+    highlightNavOnScroll();
+});
