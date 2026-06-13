@@ -12,7 +12,7 @@
     --light-bg: #f8f9fa;
     --white: #ffffff;
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
 
@@ -38,7 +38,7 @@ body {
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: var(--transition);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -149,26 +149,32 @@ body {
 
 /* Progress Bar */
 .progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px; /* Slightly thicker */
-  background: #bfb4ff; /* Light background */
-  z-index: 2000; /* Increased z-index to stay on top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* Slightly thicker */
+    background: #bfb4ff;
+    /* Light background */
+    z-index: 2000;
+    /* Increased z-index to stay on top */
 }
 
 .filled {
-  height: 100%;
-  width: 0%; /* Starts empty */
-  background: #d91dff; /* Orange color */
-  transition: width 0.1s linear;
+    height: 100%;
+    width: 0%;
+    /* Starts empty */
+    background: #d91dff;
+    /* Orange color */
+    transition: width 0.1s linear;
 }
 
 @media (max-width: 740px) {
-  .progress-bar {
-    height: 2.5px; /* Reduced height */
-  }
+    .progress-bar {
+        height: 2.5px;
+        /* Reduced height */
+    }
 }
 
 /* Hero Section */
@@ -280,7 +286,7 @@ body {
 
 .cta-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 /* Highlights Section */
@@ -308,7 +314,7 @@ body {
 
 .highlight-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border: #e74c3c 2px solid;
 }
 
@@ -409,7 +415,7 @@ body {
 
 .owner-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .owner-card img {
@@ -425,6 +431,7 @@ body {
     color: var(--primary-color);
     font-size: 1.3rem;
 }
+
 .owner-card span {
     display: block;
     font-size: 1rem;
@@ -451,16 +458,10 @@ body {
 }
 
 .testimonial-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
+    background: 0000000a;
+    padding: 1.5rem;
     text-align: center;
     transition: var(--transition);
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px) scale(1.02);
 }
 
 .testimonial-card img {
@@ -509,18 +510,18 @@ body {
 
 .overall-rating {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.8rem;
     background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
     border: 2px solid #ffd700;
     border-radius: 16px;
-    padding: 1.2rem 2.5rem;
+    padding: 0.75rem 2rem;
     box-shadow: 0 4px 16px rgba(255, 215, 0, 0.15);
 }
 
 .rating-number {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
     line-height: 1;
@@ -562,8 +563,6 @@ body {
     opacity: 0.8;
 }
 
-
-
 .testimonial-card h4 {
     color: var(--primary-color);
     font-weight: 600;
@@ -595,7 +594,7 @@ body {
 
 .room-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
 .room-card img {
@@ -645,13 +644,13 @@ body {
     background: white;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
 }
 
 .facility-item:hover {
     transform: translateX(10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .facility-item i {
@@ -760,7 +759,7 @@ body {
 
 .select-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .policies h3 {
@@ -866,7 +865,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -943,7 +942,7 @@ body {
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Section */
@@ -966,13 +965,13 @@ body {
     padding: 1.5rem;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
 }
 
 .contact-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .contact-item i {
@@ -999,7 +998,7 @@ body {
     padding: 2rem;
     border-radius: 15px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
 }
 
@@ -1064,7 +1063,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2.5rem;
     margin-bottom: 2rem;
-    position: relative; /* Ensure proper positioning context */
+    position: relative;
+    /* Ensure proper positioning context */
 }
 
 .footer-section h3,
@@ -1125,14 +1125,14 @@ body {
 
 .footer-divider {
     height: 1px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     margin: 1.5rem 0;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #bbb;
 }
 
@@ -1160,7 +1160,7 @@ body {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -1183,14 +1183,14 @@ body {
 }
 
 .tag {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     color: #d4d4d4;
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-size: 0.85rem;
     text-decoration: none;
     transition: all 0.5s ease;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .tag:hover {
@@ -1222,7 +1222,7 @@ body {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
     }
-    
+
     .tags-section {
         grid-column: span 2;
     }
@@ -1233,15 +1233,15 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .tags-section {
         grid-column: span 1;
     }
-    
+
     .social-icons {
         justify-content: center;
     }
-    
+
     .tag {
         font-size: 0.8rem;
         padding: 0.4rem 0.8rem;
@@ -1257,7 +1257,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.3s ease;
 }
 
@@ -1307,13 +1307,18 @@ body {
 
 .modal-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideInUp {
@@ -1321,6 +1326,7 @@ body {
         transform: translateY(100px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -1332,6 +1338,7 @@ body {
         transform: translateY(-100px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -1343,6 +1350,7 @@ body {
         transform: translateX(-100px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -1354,7 +1362,7 @@ body {
     .hamburger {
         display: flex;
     }
-    
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1382,7 +1390,9 @@ body {
     .nav-menu .booking-btn {
         margin: 1rem;
         display: inline-block;
-    }    .nav-menu {
+    }
+
+    .nav-menu {
         gap: 0.65rem;
     }
 
@@ -1416,29 +1426,29 @@ body {
     .slide-content h1 {
         font-size: 3rem;
     }
-    
+
     .slide-content p {
         font-size: 1.2rem;
     }
-    
+
     .cta-section {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .cta-btn {
         width: 250px;
     }
-    
+
     .highlights-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1447,23 +1457,23 @@ body {
     .facilities-list {
         gap: 1rem;
     }
-    
+
     .room-types {
         grid-template-columns: 1fr;
     }
-    
+
     .pricing-cards {
         grid-template-columns: 1fr;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
     }
-    
+
     .section-header h2 {
         font-size: 1.6rem;
     }
-    
+
     .container {
         padding: 0 15px;
     }
@@ -1472,7 +1482,7 @@ body {
         margin-bottom: 1rem;
         font-size: 1.2rem;
     }
-    
+
     .booking-form-container,
     .contact-form-section {
         padding: 1.5rem;
@@ -1491,7 +1501,9 @@ body {
         margin-bottom: 1rem;
     }
 
-    .form-group input, .form-group select, .form-group textarea {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
         padding: 0.4rem;
     }
 
@@ -1504,7 +1516,7 @@ body {
     .slide-content h1 {
         font-size: 2.6rem;
     }
-    
+
     .slide-content p {
         font-size: 1rem;
     }
@@ -1521,7 +1533,7 @@ body {
         padding: 0.4rem 1rem;
         font-size: 1rem;
     }
-    
+
     .section-header h2 {
         font-size: 1.5rem;
     }
@@ -1534,11 +1546,11 @@ body {
     .pricing-card .price {
         font-size: 2rem;
     }
-    
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .facilities-list {
         grid-template-columns: 1fr;
     }
@@ -1552,8 +1564,10 @@ body {
         margin-bottom: 1rem;
     }
 
-    .form-group input, .form-group select, .form-group textarea {
-    padding: 0.4rem;
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.4rem;
     }
 
     .contact-form-section h3 {
@@ -1571,18 +1585,18 @@ body {
     }
 
     .form-group {
-    margin-bottom: 1rem;
+        margin-bottom: 1rem;
     }
 
     .filter-btn {
-    border: 1px solid var(--secondary-color);
-    padding: 0.2rem 0.4rem;
+        border: 1px solid var(--secondary-color);
+        padding: 0.2rem 0.4rem;
     }
 
     .direction-item {
-    padding: 1.2rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+        padding: 1.2rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
     }
 
     .footer {
@@ -1690,11 +1704,11 @@ html {
     transition: all 0.3s ease;
 }
 
-.checkbox-label:hover input ~ .checkmark {
+.checkbox-label:hover input~.checkmark {
     border-color: var(--primary-color, #007bff);
 }
 
-.checkbox-label input:checked ~ .checkmark {
+.checkbox-label input:checked~.checkmark {
     background-color: var(--primary-color, #007bff);
     border-color: var(--primary-color, #007bff);
 }
@@ -1705,7 +1719,7 @@ html {
     display: none;
 }
 
-.checkbox-label input:checked ~ .checkmark:after {
+.checkbox-label input:checked~.checkmark:after {
     display: block;
 }
 
@@ -1731,14 +1745,15 @@ html {
 }
 
 #error {
-  color: red;
-  margin-bottom: 10px;
-  font-size: 0.9rem;
+    color: red;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
 /* Footer styles */
 .footer-image {
-    position: relative; /* Change from absolute to relative */
+    position: relative;
+    /* Change from absolute to relative */
     max-width: 100%;
     height: auto;
     margin: 0 auto;
@@ -1753,7 +1768,8 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2.5rem;
     margin-bottom: 2rem;
-    position: relative; /* Ensure proper positioning context */
+    position: relative;
+    /* Ensure proper positioning context */
 }
 
 /* Fixed Contact Buttons */
@@ -1775,7 +1791,7 @@ html {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     border: none;
     min-width: 140px;
@@ -1788,7 +1804,7 @@ html {
 
 .fixed-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .call-btn {
@@ -1805,7 +1821,7 @@ html {
         bottom: 15px;
         right: 15px;
     }
-    
+
     .fixed-btn {
         width: 50px;
         height: 50px;
@@ -1816,12 +1832,12 @@ html {
         justify-content: center;
         align-items: center;
     }
-    
+
     .fixed-btn i {
         margin-right: 0;
         font-size: 1.4rem;
     }
-    
+
     .btn-text {
         display: none;
     }
