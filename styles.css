@@ -537,9 +537,32 @@ body {
     display: block;
     font-size: 0.82rem;
     color: #888;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.3rem;
     font-style: italic;
 }
+
+/* Stay duration badge */
+.stay-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+    border: 1px solid #9971b255;
+    color: #6a3d9a;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+}
+
+.stay-duration i {
+    font-size: 0.72rem;
+    opacity: 0.8;
+}
+
+
 
 .testimonial-card h4 {
     color: var(--primary-color);
