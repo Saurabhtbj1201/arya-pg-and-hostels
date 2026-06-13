@@ -5,13 +5,13 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
+    --primary-color: #080753;
+    --secondary-color: #e5321f;
     --accent-color: #e74c3c;
     --text-color: #333;
     --light-bg: #f8f9fa;
     --white: #ffffff;
-    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient: #e74c3c;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
@@ -155,7 +155,7 @@ body {
     width: 100%;
     height: 3px;
     /* Slightly thicker */
-    background: #bfb4ff;
+    background: #080753;
     /* Light background */
     z-index: 2000;
     /* Increased z-index to stay on top */
@@ -165,7 +165,7 @@ body {
     height: 100%;
     width: 0%;
     /* Starts empty */
-    background: #d91dff;
+    background: #e5321f;
     /* Orange color */
     transition: width 0.1s linear;
 }
@@ -424,7 +424,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
-    border: 5px solid var(--secondary-color);
+    border: 3px solid var(--secondary-color);
 }
 
 .owner-card h4 {
@@ -1042,7 +1042,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--primary-color);
+    background: #080753;
     color: white;
     padding: 4rem 0 1rem;
     position: relative;
@@ -1658,11 +1658,11 @@ html {
 }
 
 .whatsapp-btn {
-    background: #25D366;
+    background: #0a9d41;
 }
 
 .whatsapp-btn:hover {
-    background: #20b954;
+    background: #065f27;
 }
 
 .contact-btn i {
