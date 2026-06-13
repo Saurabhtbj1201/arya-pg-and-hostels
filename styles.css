@@ -500,6 +500,54 @@ body {
     transition: var(--transition);
 }
 
+/* Testimonials Rating Summary */
+.testimonials-rating-summary {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.overall-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+    border: 2px solid #ffd700;
+    border-radius: 16px;
+    padding: 1.2rem 2.5rem;
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.15);
+}
+
+.rating-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.rating-count {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Resident detail label under testimonial name */
+.testimonial-card .resident-detail {
+    display: block;
+    font-size: 0.82rem;
+    color: #888;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+}
+
+.testimonial-card h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.1rem;
+}
+
 
 /* Rooms Section */
 .rooms {
