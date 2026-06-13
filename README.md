@@ -32,24 +32,6 @@ A modern, responsive website for Arya Boys PG/Hostel located near Galgotias Univ
 - **Font Awesome**: Icon library for UI elements
 - **Google Fonts**: Poppins font family
 
-## 📂 Project Structure
-
-```
-arya-boys-pg/
-├── index.html          # Main HTML file
-├── styles.css          # Complete CSS styling
-├── script.js           # JavaScript functionality
-├── README.md           # Project documentation
-└── images/             # Image assets folder
-    ├── home1.jpg       # Hero slider image 1
-    ├── home2.jpg       # Hero slider image 2
-    ├── home3.jpg       # Hero slider image 3
-    ├── Admin.jpg       # Owner profile image
-    ├── room1.webp      # Room gallery image
-    ├── room2.avif      # Room gallery image
-    └── outside.webp    # Outside view image
-```
-
 ## 🎯 Key Sections
 
 ### 1. **Hero Section**
@@ -92,53 +74,6 @@ arya-boys-pg/
 - Direct action buttons
 - Contact form
 
-## 🎨 Stylish Button Implementation
-
-The website features various stylish button designs:
-
-### Primary CTA Buttons
-```css
-.cta-btn.primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-
-.cta-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-}
-```
-
-### Contact Action Buttons
-```css
-.contact-btn {
-    background: var(--secondary-color);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.contact-btn:hover {
-    transform: translateY(-2px);
-    background: var(--primary-color);
-}
-```
-
-### WhatsApp Button
-```css
-.whatsapp-btn {
-    background: #25D366;
-}
-
-.whatsapp-btn:hover {
-    background: #20b954;
-}
-```
-
 ## 📧 Email Integration
 
 The website uses a mailto-based approach for form submissions:
@@ -166,40 +101,7 @@ The website uses a mailto-based approach for form submissions:
 - Touch-friendly buttons
 - Optimized font sizes
 
-## 🚀 Getting Started
-
-1. **Clone or Download** the project files
-2. **Open** `index.html` in a web browser
-3. **Customize** content, images, and contact information
-4. **Deploy** to your preferred hosting platform
-
-## 🔧 Customization
-
-### Colors
-Update CSS custom properties in `:root`:
-```css
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    /* ... */
-}
-```
-
-### Contact Information
-Update these sections:
-- Phone numbers in contact section
-- Email addresses
-- Physical address
-- WhatsApp links
-
-### Images
-Replace images in the `images/` folder:
-- Hero slider images (1200px width recommended)
-- Gallery images (400px width recommended)
-- Owner profile image (300px square recommended)
-
-## 📞 Contact Information
+## 📞 Client Contact Information
 
 - **Phone**: +91 8006908513
 - **WhatsApp**: [Chat on WhatsApp](https://wa.me/918006908513)
@@ -209,15 +111,6 @@ Replace images in the `images/` folder:
 ## 📄 License
 
 This project is created for Arya Boys PG. Feel free to use this template for similar accommodation websites with proper attribution.
-
-## 🔮 Future Enhancements
-
-- [ ] Online payment integration
-- [ ] Real-time availability checker
-- [ ] Virtual tour feature
-- [ ] Multi-language support
-- [ ] Progressive Web App (PWA) capabilities
-- [ ] Admin dashboard for booking management
 
 ---
 
