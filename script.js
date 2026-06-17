@@ -336,6 +336,78 @@ function highlightNavOnScroll() {
     });
 }
 
+// Domain renewal modal and countdown
+const domainRenewalModal = document.getElementById('domainRenewalModal');
+const domainCountdownTargets = {
+    days: document.getElementById('domainDays'),
+    hours: document.getElementById('domainHours'),
+    minutes: document.getElementById('domainMinutes'),
+    seconds: document.getElementById('domainSeconds')
+};
+const domainDeadline = new Date('2026-06-20T23:59:00+05:30').getTime();
+
+function padCountdownValue(value) {
+    return String(value).padStart(2, '0');
+}
+
+function updateDomainCountdown() {
+    if (!domainCountdownTargets.days) {
+        return;
+    }
+
+    const remaining = Math.max(domainDeadline - Date.now(), 0);
+    const secondsTotal = Math.floor(remaining / 1000);
+    const days = Math.floor(secondsTotal / 86400);
+    const hours = Math.floor((secondsTotal % 86400) / 3600);
+    const minutes = Math.floor((secondsTotal % 3600) / 60);
+    const seconds = secondsTotal % 60;
+
+    domainCountdownTargets.days.textContent = padCountdownValue(days);
+    domainCountdownTargets.hours.textContent = padCountdownValue(hours);
+    domainCountdownTargets.minutes.textContent = padCountdownValue(minutes);
+    domainCountdownTargets.seconds.textContent = padCountdownValue(seconds);
+}
+
+function openDomainRenewalModal() {
+    if (!domainRenewalModal) {
+        return;
+    }
+
+    domainRenewalModal.classList.add('is-visible');
+    domainRenewalModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('domain-modal-open');
+}
+
+function closeDomainRenewalModal() {
+    if (!domainRenewalModal) {
+        return;
+    }
+
+    domainRenewalModal.classList.remove('is-visible');
+    domainRenewalModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('domain-modal-open');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (!domainRenewalModal) {
+        return;
+    }
+
+    updateDomainCountdown();
+    setInterval(updateDomainCountdown, 1000);
+    openDomainRenewalModal();
+
+    domainRenewalModal.querySelectorAll('[data-domain-modal-close]').forEach(control => {
+        control.addEventListener('click', closeDomainRenewalModal);
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            closeDomainRenewalModal();
+        }
+    });
+});
+
 // Add scroll event listener for highlighting active nav link
 window.addEventListener('scroll', highlightNavOnScroll);
 
