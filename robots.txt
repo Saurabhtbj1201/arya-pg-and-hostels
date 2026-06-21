@@ -1,46 +1,54 @@
-# Robots.txt for Arya Boys PG Website
-# https://aryapg.com/
+# robots.txt for Arya Boys PG
+# Last Updated: June 20, 2026
+# Controls search engine crawler access & provides sitemap locations
 
-# Allow all web crawlers to access the site
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /?
 
-# Sitemap location
-Sitemap: https://aryapg.com/sitemap.xml
-
-# Crawl delay to prevent server overload
-Crawl-delay: 1
-Allow: /script.js
-Allow: /images/
-
-# Allow access to CSS and JS files for better rendering
-Allow: /*.css
-Allow: /*.js
-
-# Allow access to image files
-Allow: /*.jpg
-Allow: /*.jpeg
-Allow: /*.png
-Allow: /*.gif
-Allow: /*.webp
-Allow: /*.avif
-Allow: /*.svg
-
-# Sitemap location (you can create this later)
-Sitemap: https://aryapg.com/sitemap.xml
-
-# Crawl delay (optional - helps prevent server overload)
+# Crawl delay
 Crawl-delay: 1
 
-# Specific instructions for major search engines
+# Allow critical resources
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Sitemap locations
+Sitemap: https://aryapg.com/sitemap.xml
+Sitemap: https://aryapg.com/sitemap-locations.xml
+Sitemap: https://aryapg.com/sitemap-blog.xml
+
+# Google-specific
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
+# Bing-specific
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-User-agent: Slurp
+# Yandex-specific
+User-agent: YandexBot
 Allow: /
 Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

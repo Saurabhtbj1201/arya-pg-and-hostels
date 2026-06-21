@@ -1226,6 +1226,13 @@ body {
     .tags-section {
         grid-column: span 2;
     }
+
+    .footer-content > div:has(.footer-image),
+    .footer-content > div:last-child {
+        grid-column: span 2;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1236,6 +1243,13 @@ body {
 
     .tags-section {
         grid-column: span 1;
+    }
+
+    .footer-content > div:has(.footer-image),
+    .footer-content > div:last-child {
+        grid-column: span 1;
+        display: flex;
+        justify-content: center;
     }
 
     .social-icons {
@@ -2100,6 +2114,28 @@ html {
     margin-bottom: 2rem;
     position: relative;
     /* Ensure proper positioning context */
+}
+
+@media (min-width: 769px) {
+    .footer-content {
+        grid-template-columns: repeat(20, 1fr);
+    }
+    
+    .footer-content > .footer-section:not(.tags-section) {
+        grid-column: span 5;
+    }
+    
+    .footer-content > .tags-section {
+        grid-column: span 13;
+    }
+    
+    .footer-content > div:has(.footer-image),
+    .footer-content > div:last-child {
+        grid-column: span 7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* Fixed Contact Buttons */
