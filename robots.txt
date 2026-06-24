@@ -24,9 +24,9 @@ Allow: /*.webp$
 Allow: /*.svg$
 
 # Sitemap locations
-Sitemap: https://aryapg.com/sitemap.xml
-Sitemap: https://aryapg.com/sitemap-locations.xml
-Sitemap: https://aryapg.com/sitemap-blog.xml
+Sitemap: https://www.aryapg.com/sitemap.xml
+Sitemap: https://www.aryapg.com/sitemap-locations.xml
+Sitemap: https://www.aryapg.com/sitemap-blog.xml
 
 # Google-specific
 User-agent: Googlebot

@@ -29,6 +29,11 @@ body {
     padding: 0 20px;
 }
 
+.footer-container, .gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -71,6 +76,7 @@ body {
 .nav-logo h2 {
     color: var(--primary-color);
     font-weight: 700;
+    margin: 0;
 }
 
 .nav-menu {
@@ -1088,7 +1094,7 @@ body {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.4rem;
     transition: transform 0.3s ease;
 }
 
@@ -1097,7 +1103,7 @@ body {
 }
 
 .footer-links li a {
-    color: #bbb;
+    color: #cbcbcb;
     text-decoration: none;
     transition: color 0.3s ease;
     display: flex;
@@ -1106,11 +1112,17 @@ body {
 }
 
 .footer-links li a:hover {
-    color: var(--secondary-color);
+    color: #fff;
+}
+
+/* Location columns in footer */
+.footer-links.location-columns, .quicklinks-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .contact-info li {
-    color: #bbb;
+    color: #cbcbcb;
     margin-bottom: 0.8rem;
     display: flex;
     align-items: flex-start;
@@ -1137,7 +1149,7 @@ body {
 }
 
 .footer-bottom a {
-    color: var(--secondary-color);
+    color: #cbcbcb;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -1184,24 +1196,22 @@ body {
 
 .tag {
     background: rgba(255, 255, 255, 0.08);
-    color: #d4d4d4;
-    padding: 0.5rem 1rem;
+    color: rgba(255, 255, 255, 0.90);
+    padding: 0rem 1rem;
     border-radius: 50px;
     font-size: 0.85rem;
     text-decoration: none;
-    transition: all 0.5s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .tag:hover {
     background: #1c106e;
     color: rgb(255, 238, 0);
-    transform: translateY(-3px);
     border: 1px solid rgba(255, 255, 255, 0.44);
 }
 
 .about-section p {
-    color: #bbb;
+    color: #cbcbcb;
     line-height: 1.7;
     margin-bottom: 1rem;
 }
@@ -1227,8 +1237,8 @@ body {
         grid-column: span 2;
     }
 
-    .footer-content > div:has(.footer-image),
-    .footer-content > div:last-child {
+    .footer-content>div:has(.footer-image),
+    .footer-content>div:last-child {
         grid-column: span 2;
         display: flex;
         justify-content: center;
@@ -1245,8 +1255,8 @@ body {
         grid-column: span 1;
     }
 
-    .footer-content > div:has(.footer-image),
-    .footer-content > div:last-child {
+    .footer-content>div:has(.footer-image),
+    .footer-content>div:last-child {
         grid-column: span 1;
         display: flex;
         justify-content: center;
@@ -2120,17 +2130,17 @@ html {
     .footer-content {
         grid-template-columns: repeat(20, 1fr);
     }
-    
-    .footer-content > .footer-section:not(.tags-section) {
+
+    .footer-content>.footer-section:not(.tags-section) {
         grid-column: span 5;
     }
-    
-    .footer-content > .tags-section {
+
+    .footer-content>.tags-section {
         grid-column: span 13;
     }
-    
-    .footer-content > div:has(.footer-image),
-    .footer-content > div:last-child {
+
+    .footer-content>div:has(.footer-image),
+    .footer-content>div:last-child {
         grid-column: span 7;
         display: flex;
         align-items: center;
