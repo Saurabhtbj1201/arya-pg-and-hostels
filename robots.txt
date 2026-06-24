@@ -1,5 +1,5 @@
 # robots.txt for Arya Boys PG
-# Last Updated: June 20, 2026
+# Last Updated: June 24, 2026
 # Controls search engine crawler access & provides sitemap locations
 
 User-agent: *
@@ -25,8 +25,7 @@ Allow: /*.svg$
 
 # Sitemap locations
 Sitemap: https://www.aryapg.com/sitemap.xml
-Sitemap: https://www.aryapg.com/sitemap-locations.xml
-Sitemap: https://www.aryapg.com/sitemap-blog.xml
+
 
 # Google-specific
 User-agent: Googlebot

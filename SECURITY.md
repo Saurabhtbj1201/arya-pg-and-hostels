@@ -2,20 +2,22 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Currently supported versions for security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 1.0.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+We take the security of Arya Boys PG very seriously. If you discover a security vulnerability, please report it immediately.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+You can report vulnerabilities directly by contacting us:
+- **Email:** Sachinngr300@gmail.com
+- **Phone & WhatsApp:** +91 8006908513
+
+Please include as much detail as possible, including steps to reproduce, so we can address the issue promptly. We will acknowledge your report within 48 hours and provide weekly updates until the issue is resolved.
+
+---
+
+**Copyright © 2026 Arya Boys PG. All Rights Reserved.**
